@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 function CreateArea(props) {
   const [data, setData] = useState({ title: "", content: "" });
 
@@ -8,7 +7,7 @@ function CreateArea(props) {
     setData((prevValue) => {
       return {
         ...prevValue,
-        [name]: value //dynamic key
+        [name]: value, //dynamic key
       };
     });
   }
@@ -30,10 +29,13 @@ function CreateArea(props) {
           onChange={handleChange}
         />
         <button
-          onClick={() => {
+          onClick={(event) => {
             props.onAdd(data);
+            setData({ title: "", content: "" });
+            event.preventDefault();
           }}
         >
+          {" "}
           Add
         </button>
       </form>
