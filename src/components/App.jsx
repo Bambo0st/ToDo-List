@@ -18,7 +18,6 @@ function App() {
   }
   return (
     <div>
-      <h1>IamgFod</h1>
       <Header />
       <CreateArea onAdd={addItem} />
       <Note key={1} title="Note title" content="Note content" />
